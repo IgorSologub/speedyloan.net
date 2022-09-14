@@ -83,18 +83,4 @@ public class MainTest extends BaseTest {
         assertEquals(ORDER_PAGE_URL, basePage.getCurrentUrl());
     }
 
-    @Test
-    public void readMoreButtonTest () {
-        int goodTitlesCount = 0;
-        for (int i = 1; i <= NUMBER_OF_READ_MORE_MAIN_PAGE; i++) {
-            basePage.waitOneSeconds();
-            mainPage.readMoreButtonClick(i);
-            basePage.waitOneSeconds();
-            if (basePage.checkTitles(REVIEW_TITLES)) { goodTitlesCount++; }
-            else { basePage.outputWrongTitle(); }
-            basePage.back(MAIN_PAGE_URL);
-        }
-        assertEquals(NUMBER_OF_READ_MORE_MAIN_PAGE, goodTitlesCount);
-    }
-
 }

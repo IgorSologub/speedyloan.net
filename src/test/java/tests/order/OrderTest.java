@@ -96,8 +96,10 @@ public class OrderTest extends BaseTest {
         basePage.waitThreeSeconds();
         orderPage.nextStepButtonClick();
 
+        /*
         basePage.waitThreeSeconds();
         orderPage.bankAccountTypeButtonClick();
+         */
 
         basePage.waitThreeSeconds();
         orderPage.lengthOfBankAccountButtonClick();
