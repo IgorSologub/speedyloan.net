@@ -54,14 +54,12 @@ public class ReviewCategoryTest extends BaseTest {
     @Test
     public void visitSiteButtonTest () {
         int goodTitlesCount = 0;
-        for (int i = 1; i <= NUMBER_OF_VISIT_SITE_REVIEW_CATEGORY; i++) {
-            basePage.waitOneSeconds();
-            reviewCategory.visitSiteButtonClick(i);
-            basePage.waitOneSeconds();
-            if (basePage.checkUrl(ORDER_PAGE_URL)) { goodTitlesCount++; }
-            else { basePage.outputWrongTitle(); }
-            basePage.back(REVIEW_CATEGORY_URL);
-        }
+        basePage.waitOneSeconds();
+        reviewCategory.visitSiteButtonClick(1);
+        basePage.waitOneSeconds();
+        if (basePage.checkUrl(ORDER_PAGE_URL)) { goodTitlesCount++; }
+        else { basePage.outputWrongTitle(); }
+        basePage.back(REVIEW_CATEGORY_URL);
         assertEquals(NUMBER_OF_VISIT_SITE_REVIEW_CATEGORY, goodTitlesCount);
     }
 
